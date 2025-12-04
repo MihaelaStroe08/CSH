@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>CSH Admin</title>
+    <meta charset="UTF-8" />
+    <title>CSH Admin</title>
 
-  <!-- Stil default pentru CMS -->
-  <link rel="stylesheet" href="https://unpkg.com/netlify-cms/dist/netlify-cms.css" />
+    <!-- Stil default pentru CMS -->
+    <link rel="stylesheet" href="https://unpkg.com/netlify-cms/dist/netlify-cms.css" />
 </head>
-
 <body>
-  <!-- Elementul unde se va încărca CMS-ul -->
-  <div id="nc-root"></div>
 
-  <!-- Script Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    <!-- Elementul unde se va încărca CMS-ul -->
+    <div id="nc-root"></div>
+
+    <!-- Script Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+
+    <!-- 🔐 Script Netlify Identity (FOARTE IMPORTANT) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>
+
 
 
