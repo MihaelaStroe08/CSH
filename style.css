@@ -1,0 +1,419 @@
+/* CSS global pentru site-ul liceului modern si responsive */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #0d47a1;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header img {
+    height: 180px;
+}
+
+.contact-top {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav {
+    width: 100%;
+    background: #1565c0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #0d47a1;
+}
+
+/* === DROPDOWN STANDARD (pentru scolarizare, declaratii etc) === */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1565c0;
+    padding: 10px 0;
+    border-radius: 6px;
+    min-width: 180px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    display: block;
+    padding: 10px;
+}
+
+/* -------------------------------------------- */
+/* === PROIECTE (MENIU SPECIAL ÎN DOUĂ NIVELURI) === */
+/* -------------------------------------------- */
+
+.projects-parent {
+    position: relative;
+}
+
+/* Coloana 1 – PROIECTE ERASMUS+ */
+.projects-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0d47a1;
+    width: 260px;
+    padding: 10px 0;
+    border-radius: 6px;
+    z-index: 9999;
+}
+
+.projects-parent:hover > .projects-menu {
+    display: block;
+}
+
+.projects-menu > li > a {
+    display: block;
+    padding: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+.projects-menu > li > a:hover {
+    background: #08306b;
+}
+
+/* Coloana 2 – apare doar la hover pe PROIECTE ERASMUS+ */
+.submenu-parent {
+    position: relative;
+}
+
+/* Coloana 2 – lista proiectelor */
+.submenu-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 260px;
+    background: #0d47a1;
+    padding: 10px 0;
+    border-radius: 6px;
+    z-index: 9999;
+}
+
+.submenu-parent:hover > .submenu-right {
+    display: block;
+}
+
+.submenu-right li a {
+    padding: 10px 12px;
+    display: block;
+    color: white;
+}
+
+.submenu-right li a:hover {
+    background: #08306b;
+}
+
+/* -------------------------------------------- */
+/* === SCURT ISTORIC === */
+/* -------------------------------------------- */
+
+.istoric-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: nowrap;
+    margin-bottom: 25px;
+}
+
+.istoric-img {
+    max-width: 350px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.istoric-text {
+    flex: 1;
+}
+
+.istoric-continuare p {
+    margin-bottom: 12px;
+}
+
+/* -------------------------------------------- */
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+    background: white;
+}
+
+.hero-text {
+    max-width: 550px;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.hero h1,
+.hero h2 {
+    font-size: 42px;
+    color: #0d47a1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hero img {
+    max-width: 360px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li ul {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+/* === CONTACT PAGE === */
+
+.contact-box {
+  background: #f8f9fc;
+  border-left: 5px solid #1565c0;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.contact-box p {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.icon-row {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* HARTA GOOGLE LIVE */
+.map-container {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* === CONTACT PAGE === */
+
+/* === CONTACT PAGE – FIX SPACING === */
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+
+  /* ADUS MAI ÎNĂUNTRU */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.contact-info {
+  max-width: 420px;
+  font-size: 18px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+}
+
+/* Linkuri utile */
+.contact-links-box {
+  max-width: 280px;
+}
+
+.contact-subtitle {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #f0f4ff;
+  border-left: 5px solid #1565c0;
+  border-radius: 8px;
+}
+
+.contact-links a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d80000;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.contact-links a:hover {
+  color: #0d47a1;
+  transform: translateX(4px);
+}
+
+/* Harta Google */
+.map-container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.map-container iframe {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* HERO FULLSCREEN */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* FULLSCREEN HEIGHT */
+
+  background-image: url("CSH.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Blur + overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 25, 90, 0.45); /* albastru transparent */
+  z-index: 1;
+}
+
+/* TEXT */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero-content h1 {
+  font-size: 75px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: white
+}
+
+.hero-content h2 {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 48px; }
+  .hero-content h2 { font-size: 36px; }
+  .hero-content p { font-size: 16px; letter-spacing: 2px; }
+}
+
+

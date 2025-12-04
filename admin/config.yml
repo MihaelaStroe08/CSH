@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+
+  # 1. Anunturi
+  - name: "anunturi"
+    label: "Anunțuri"
+    folder: "content/anunturi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Conținut", name: "body", widget: "markdown" }
+
+  # 2. ROSE3
+  - name: "rose3"
+    label: "ROSE3"
+    files:
+      - name: "rose3page"
+        label: "Pagina ROSE3"
+        file: "content/rose3/rose3.md"
+        fields:
+          - { label: "Titlu", name: "title", widget: "string" }
+          - { label: "Conținut", name: "body", widget: "markdown" }
+
+  # 3. Proiecte Erasmus+
+  - name: "proiecte"
+    label: "Proiecte Erasmus+"
+    folder: "content/proiecte"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titlu proiect", name: "title", widget: "string" }
+      - { label: "Conținut proiect", name: "body", widget: "markdown" }
+
+  # 4. Declaratii de avere și interese
+  - name: "declaratii"
+    label: "Declarații de avere și interese"
+    folder: "content/declaratii"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Anul", name: "year", widget: "number" }
+      - { label: "Fișier PDF", name: "file", widget: "file", media_library: { allow_multiple: false } }
+
+  # 5. Scolarizare
+  - name: "scolarizare"
+    label: "Școlarizare"
+    folder: "content/scolarizare"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "An școlar", name: "year", widget: "string" }
+      - { label: "Fișier PDF", name: "file", widget: "file", media_library: { allow_multiple: false } }
+
+  # 6. Linkuri utile
+  - name: "linkuri"
+    label: "Linkuri utile"
+    files:
+      - name: "linkuriutile"
+        label: "Linkuri utile"
+        file: "content/linkuri/linkuri.md"
+        fields:
+          - { label: "CEAC", name: "ceac", widget: "string" }
+          - { label: "C.D.I", name: "cdi", widget: "string" }
+          - { label: "Facebook", name: "facebook", widget: "string" }
+          - { label: "C.C.D", name: "ccd", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+
