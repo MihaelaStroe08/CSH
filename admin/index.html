@@ -4,19 +4,29 @@
   <meta charset="UTF-8" />
   <title>CSH Admin</title>
 
-  <!-- Netlify Identity -->
+  <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+  <!-- CMS styles -->
   <link rel="stylesheet" href="https://unpkg.com/netlify-cms/dist/netlify-cms.css" />
 </head>
 
 <body>
+  <!-- Container CMS -->
   <div id="nc-root"></div>
 
+  <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
 
-  <!-- Redirect after login -->
+  <!-- Identity + Recovery Token Fix -->
   <script>
+    // Deschide automat fereastra de resetare dacă există recovery_token
+    const tokenMatch = window.location.hash.match(/recovery_token=([^&]+)/);
+    if (tokenMatch && window.netlifyIdentity) {
+      window.netlifyIdentity.open('login');
+    }
+
+    // Redirect după login
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -27,8 +37,11 @@
       });
     }
   </script>
+
 </body>
 </html>
+
+
 
 
 
