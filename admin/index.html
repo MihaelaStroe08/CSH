@@ -4,10 +4,24 @@
   <meta charset="UTF-8" />
   <title>CSH Admin</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/decap-cms@next/dist/decap-cms.css" />
+  <!-- Decap CMS stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms/dist/decap-cms.css" />
+
 </head>
+
 <body>
-  <script src="https://unpkg.com/decap-cms@next/dist/decap-cms.js"></script>
+  <!-- Container CMS -->
+  <div id="nc-root"></div>
+
+  <!-- Decap CMS script -->
+  <script src="https://unpkg.com/decap-cms/dist/decap-cms.js"></script>
+
+  <!-- IMPORTANT pentru Cloudflare: fără Netlify Identity -->
+  <script>
+    // Load Decap CMS
+    CMS.init();
+  </script>
+
 </body>
 </html>
 
