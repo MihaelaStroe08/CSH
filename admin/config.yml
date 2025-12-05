@@ -2,14 +2,16 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend: true  
-
 media_folder: "uploads"
 public_folder: "/uploads"
 
+site_url: "https://cshploiesti.pages.dev"
+
 collections:
 
-  # 1. Anunturi
+  ############################
+  # 1. ANUNTURI
+  ############################
   - name: "anunturi"
     label: "Anunțuri"
     folder: "content/anunturi"
@@ -20,7 +22,9 @@ collections:
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Conținut", name: "body", widget: "markdown" }
 
+  ############################
   # 2. ROSE3
+  ############################
   - name: "rose3"
     label: "ROSE3"
     files:
@@ -31,7 +35,9 @@ collections:
           - { label: "Titlu", name: "title", widget: "string" }
           - { label: "Conținut", name: "body", widget: "markdown" }
 
-  # 3. Proiecte Erasmus+
+  ############################
+  # 3. PROIECTE ERASMUS+
+  ############################
   - name: "proiecte"
     label: "Proiecte Erasmus+"
     folder: "content/proiecte"
@@ -41,7 +47,9 @@ collections:
       - { label: "Titlu proiect", name: "title", widget: "string" }
       - { label: "Conținut proiect", name: "body", widget: "markdown" }
 
-  # 4. Declaratii de avere și interese
+  ############################
+  # 4. DECLARATII DE AVERE SI INTERESE
+  ############################
   - name: "declaratii"
     label: "Declarații de avere și interese"
     folder: "content/declaratii"
@@ -51,7 +59,9 @@ collections:
       - { label: "Anul", name: "year", widget: "number" }
       - { label: "Fișier PDF", name: "file", widget: "file", media_library: { allow_multiple: false } }
 
-  # 5. Scolarizare
+  ############################
+  # 5. SCOLARIZARE
+  ############################
   - name: "scolarizare"
     label: "Școlarizare"
     folder: "content/scolarizare"
@@ -61,7 +71,9 @@ collections:
       - { label: "An școlar", name: "year", widget: "string" }
       - { label: "Fișier PDF", name: "file", widget: "file", media_library: { allow_multiple: false } }
 
-  # 6. Linkuri utile
+  ############################
+  # 6. LINKURI UTILE
+  ############################
   - name: "linkuri"
     label: "Linkuri utile"
     files:
@@ -74,5 +86,6 @@ collections:
           - { label: "Facebook", name: "facebook", widget: "string" }
           - { label: "C.C.D", name: "ccd", widget: "string" }
           - { label: "Instagram", name: "instagram", widget: "string" }
+
 
 
