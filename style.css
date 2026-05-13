@@ -443,84 +443,32 @@ nav ul li ul.open {
   cursor: pointer;
 }
 
-
-/* --- Stil general pagina cookies --- */
-.cookies-page {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa; /* fundal neutru pentru conținut */
-    color: #333;
+/* Titlu pagină + categorie la stânga (rămâne la stânga) */
+.page-header {
+    text-align: left;
     margin: 0;
     padding: 0;
 }
 
-.cookies-page header,
-.cookies-page footer {
-    background-color: #0d47a1; /* albastru ca header-ul site-ului */
-    color: white;
+/* Containerul paginii */
+/* Wrapper pentru tot ce vrei centrat */
+.centered-content {
+    text-align: center;  /* centrează tot conținutul din interior */
 }
 
-.cookies-page header .logo,
-.cookies-page footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.cookies-page main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.cookies-page h1, .cookies-page h2 {
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.cookies-page ul {
-    list-style-type: none;
+/* Listele cu linkuri PDF */
+.file-list {
+    list-style: none;  
     padding: 0;
+    margin: 0 auto 30px auto; /* spațiu jos între secțiuni */
 }
 
-.cookies-page ul li {
-    background-color: #e3f2fd; /* albastru deschis ca la carduri */
-    border-radius: 8px;
-    margin: 0.5rem 0;
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
+.file-list li {
+    margin: 5px 0;  
 }
 
-.cookies-page ul li strong {
-    color: #0d47a1; /* albastru închis pentru titlu */
-}
-
-.cookies-page a.btn {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    background-color: #0d47a1;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.cookies-page a.btn:hover {
-    background-color: #1565c0;
-}
-
-/* Responsivitate */
-@media (max-width: 768px) {
-    .cookies-page main {
-        margin: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .cookies-page ul li {
-        font-size: 0.95rem;
-        padding: 0.6rem 0.8rem;
-    }
+/* Titluri secțiuni */
+h2.section-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
