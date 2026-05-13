@@ -72,12 +72,18 @@ backToTop.addEventListener('click', () => {
 });
 
 // Cookie Banner
-// Cookie banner
 const cookieBanner = document.getElementById('cookie-banner');
 const acceptBtn = document.getElementById('accept-cookies');
 
-cookieBanner.style.display = 'flex';
+// Verificăm dacă utilizatorul a acceptat deja
+if(localStorage.getItem('cookiesAccepted')) {
+  cookieBanner.style.display = 'none';
+} else {
+  cookieBanner.style.display = 'flex';
+}
 
+// Când utilizatorul apasă Accept
 acceptBtn.addEventListener('click', () => {
   cookieBanner.style.display = 'none';
+  localStorage.setItem('cookiesAccepted', 'true');
 });
