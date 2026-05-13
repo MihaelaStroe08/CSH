@@ -442,3 +442,82 @@ nav ul li ul.open {
   border-radius: 4px;
   cursor: pointer;
 }
+
+
+/* Cookie Page Styling */
+body.cookies-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.cookies-page header img {
+  max-width: 150px;
+  display: block;
+  margin: 20px auto;
+}
+
+.cookies-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-top: 20px;
+}
+
+.cookies-page p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cookies-page h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2rem;
+  color: #1a1a1a;
+}
+
+.cookies-page strong {
+  color: #0056b3;
+}
+
+.cookies-page a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #0056b3;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cookies-page a:hover {
+  background-color: #003f7f;
+}
+
+.cookies-page ul {
+  max-width: 500px;
+  margin: 20px auto;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cookies-page ul li {
+  background-color: #e9ecef;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.cookies-page footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
