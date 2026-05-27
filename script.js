@@ -72,18 +72,115 @@ backToTop.addEventListener('click', () => {
 });
 
 // Cookie Banner
+// Cookie banner
 const cookieBanner = document.getElementById('cookie-banner');
 const acceptBtn = document.getElementById('accept-cookies');
 
-// Verificăm dacă utilizatorul a acceptat deja
-if(localStorage.getItem('cookiesAccepted')) {
-  cookieBanner.style.display = 'none';
-} else {
-  cookieBanner.style.display = 'flex';
-}
+cookieBanner.style.display = 'flex';
 
-// Când utilizatorul apasă Accept
 acceptBtn.addEventListener('click', () => {
   cookieBanner.style.display = 'none';
-  localStorage.setItem('cookiesAccepted', 'true');
 });
+
+// SCRIPT PAGINATION
+
+const totalPages = 100;
+let currentPage = 1;
+
+// ==== HASH: pagină + anunț ====
+// ex: #11-anunt-2
+if (window.location.hash) {
+  const hash = window.location.hash.replace('#', '');
+  const parts = hash.split('-anunt-'); // separăm pagina de anunț
+
+  const hashPage = parseInt(parts[0]);
+  if (!isNaN(hashPage) && hashPage >= 1 && hashPage <= totalPages) {
+    currentPage = hashPage; // setează pagina din hash
+  }
+
+  // dacă există și anunț specific
+  if (parts[1]) {
+    window.addEventListener('load', () => {
+      const anuntElem = document.getElementById(`anunt-${parts[0]}-${parts[1]}`);
+      if (anuntElem) anuntElem.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+}
+// =================================
+
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const pageNumbersContainer = document.querySelector('.page-numbers');
+
+function getMaxVisible() {
+  return window.innerWidth <= 600 ? 3 : 10; // mobil: 3 pagini, desktop: 10
+}
+
+function renderPagination() {
+  const maxVisible = getMaxVisible();
+  pageNumbersContainer.innerHTML = '';
+
+  let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+  let end = start + maxVisible - 1;
+  if (end > totalPages) {
+    end = totalPages;
+    start = Math.max(1, end - maxVisible + 1);
+  }
+
+  for (let i = start; i <= end; i++) {
+    const btn = document.createElement('button');
+    btn.classList.add('page-btn');
+    if (i === currentPage) btn.classList.add('active');
+    btn.innerText = i;
+    btn.onclick = () => {
+      currentPage = i;
+
+      // actualizează hash-ul cu pagina curentă
+      window.location.hash = currentPage;
+
+      renderPagination();
+      renderAnunturi();
+    };
+    pageNumbersContainer.appendChild(btn);
+  }
+
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
+
+// Prev / Next
+prevBtn.onclick = () => { 
+  currentPage--; 
+  window.location.hash = currentPage;
+  renderPagination(); 
+  renderAnunturi(); 
+};
+nextBtn.onclick = () => { 
+  currentPage++; 
+  window.location.hash = currentPage;
+  renderPagination(); 
+  renderAnunturi(); 
+};
+
+// ==========================================
+// FUNCȚIA DE AFIȘARE ANUNȚURI
+// Adaugă id-uri unice pentru fiecare anunț, ex: "anunt-11-2" pentru pagina 11, anunțul 2
+function renderAnunturi() {
+  const list = document.querySelector('.anunturi-list');
+  // ascunde tot ce este acolo
+  const anunturi = list.querySelectorAll('.anunt');
+  anunturi.forEach(a => {
+    if (parseInt(a.dataset.page) === currentPage) {
+      a.style.display = 'block';
+    } else {
+      a.style.display = 'none';
+    }
+  });
+}
+
+// inițial
+renderPagination();
+renderAnunturi();
+
+// actualizează la resize
+window.addEventListener('resize', renderPagination);
