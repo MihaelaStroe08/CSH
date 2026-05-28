@@ -1,5 +1,7 @@
 
 
+/* CSS global pentru site-ul liceului modern si responsive */
+
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +70,7 @@ nav ul li a:hover {
     background: #0d47a1;
 }
 
-
+/* === DROPDOWN STANDARD (pentru scolarizare, declaratii etc) === */
 nav ul li ul {
     display: none;
     position: absolute;
@@ -91,13 +93,15 @@ nav ul li ul li a {
     padding: 10px;
 }
 
-
+/* -------------------------------------------- */
+/* === PROIECTE (MENIU SPECIAL ÎN DOUĂ NIVELURI) === */
+/* -------------------------------------------- */
 
 .projects-parent {
     position: relative;
 }
 
-
+/* Coloana 1 – PROIECTE ERASMUS+ */
 .projects-menu {
     display: none;
     position: absolute;
@@ -125,12 +129,12 @@ nav ul li ul li a {
     background: #08306b;
 }
 
-
+/* Coloana 2 – apare doar la hover pe PROIECTE ERASMUS+ */
 .submenu-parent {
     position: relative;
 }
 
-
+/* Coloana 2 – lista proiectelor */
 .submenu-right {
     display: none;
     position: absolute;
@@ -157,7 +161,9 @@ nav ul li ul li a {
     background: #08306b;
 }
 
-
+/* -------------------------------------------- */
+/* === SCURT ISTORIC === */
+/* -------------------------------------------- */
 
 .istoric-flex {
     display: flex;
@@ -181,7 +187,7 @@ nav ul li ul li a {
     margin-bottom: 12px;
 }
 
-
+/* -------------------------------------------- */
 
 .hero {
     display: flex;
@@ -227,7 +233,7 @@ footer {
     margin-top: auto;
 }
 
-
+/* Responsive */
 @media (max-width: 768px) {
     .hero-text {
         margin-right: 0;
@@ -245,7 +251,7 @@ footer {
     }
 }
 
-
+/* ================= CONTACT ================== */
 .contact-container {
   display: flex;
   gap: 40px;
@@ -300,7 +306,7 @@ footer {
   transform: translateX(4px);
 }
 
-
+/* MAP */
 .map-container iframe {
   width: 100%;
   border-radius: 10px;
@@ -308,7 +314,7 @@ footer {
   margin-top: 20px;
 }
 
-
+/* Responsive – pentru mobil */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -322,11 +328,11 @@ footer {
 }
 
 
-
+/* HERO FULLSCREEN */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;  
+  height: 100vh;  /* FULLSCREEN HEIGHT */
 
   background-image: url("CSH.jpg");
   background-size: cover;
@@ -342,17 +348,17 @@ footer {
   padding: 0;
 }
 
-
+/* Blur + overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   backdrop-filter: blur(10px);
-  background: rgba(0, 25, 90, 0.45); 
+  background: rgba(0, 25, 90, 0.45); /* albastru transparent */
   z-index: 1;
 }
 
-
+/* TEXT */
 .hero-content {
   position: relative;
   z-index: 5;
@@ -383,27 +389,31 @@ footer {
   color: white;
 }
 
-
+/* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 { font-size: 48px; }
   .hero-content h2 { font-size: 36px; }
   .hero-content p { font-size: 16px; letter-spacing: 2px; }
 }
 
+/* =======================
+   JavaScript: Mega Menu și Dropdown open
+   ======================= */
 
+/* Clasa .open va fi controlată de JS */
 .projects-menu.open,
 .submenu-right.open,
 nav ul li ul.open {
   display: block !important;
 }
 
-
+/* Tranziții mai smooth pentru deschidere/submeniuri */
 .projects-menu,
 .submenu-right {
   transition: all 0.3s ease;
 }
 
-
+/* COOKIE BANNER – MIC, STANGA */
 #cookie-banner {
   display: none; 
   position: fixed;
@@ -435,42 +445,44 @@ nav ul li ul.open {
   cursor: pointer;
 }
 
-
+/* Titlu pagină + categorie la stânga (rămâne la stânga) */
 .page-header {
     text-align: left;
     margin: 0;
     padding: 0;
 }
 
-
+/* Containerul paginii */
+/* Wrapper pentru tot ce vrei centrat */
 .centered-content {
-    text-align: center; 
+    text-align: center;  /* centrează tot conținutul din interior */
+}
 
-
+/* Listele cu linkuri PDF */
 .file-list {
     list-style: none;  
     padding: 0;
-    margin: 0 auto 30px auto; 
+    margin: 0 auto 30px auto; /* spațiu jos între secțiuni */
 }
 
 .file-list li {
     margin: 5px 0;  
 }
 
-
+/* Titluri secțiuni */
 h2.section-title {
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
 .page-header img {
-    display: block;       
-    margin: 0 auto;      
-    max-width: 100%;      
-    height: auto;         
+    display: block;       /* face imaginea bloc pentru a putea centra */
+    margin: 0 auto;       /* marginile stânga și dreapta auto pentru centru */
+    max-width: 100%;      /* nu depășește containerul */
+    height: auto;         /* păstrează proporțiile */
 }
 
-
+/* PAGINATION */
 .pagination-container {
     display: flex;
     justify-content: center;
@@ -503,7 +515,7 @@ h2.section-title {
     margin: 0 2px;
 }
 
-
+/* Responsive */
 @media (max-width: 600px) {
     .page-btn {
         padding: 4px 7px;
@@ -511,20 +523,22 @@ h2.section-title {
     }
 }
 
+/* ======================================
+   STIL ANUNTURI PAGINATE
+   ====================================== */
 
-
-
+/* Wrapper pentru fiecare anunt */
 .anunt {
-    max-width: 900px;         
-    margin: 0 auto 30px auto;  
+    max-width: 900px;          /* limitează lățimea */
+    margin: 0 auto 30px auto;  /* centru + distanță jos între anunțuri */
     padding: 20px 15px;
-    background-color: #fff;    
-    border-radius: 8px;        
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
-    text-align: center;        
+    background-color: #fff;    /* fundal alb */
+    border-radius: 8px;        /* colțuri rotunjite */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* umbre ușoare */
+    text-align: center;        /* centrează tot conținutul */
 }
 
-
+/* Titlul anuntului */
 .anunt h2 {
     font-size: 22px;
     font-weight: 600;
@@ -532,7 +546,7 @@ h2.section-title {
     color: #222;
 }
 
-
+/* Categoria anuntului */
 .anunt p {
     font-style: italic;
     font-size: 15px;
@@ -541,20 +555,20 @@ h2.section-title {
     text-align: center;
 }
 
-
+/* Lista de linkuri / fișiere PDF */
 .anunt ul {
     list-style-type: none;
     padding-left: 0;
-    text-align: center;  
+    text-align: center;  /* centru linkuri */
 }
 
 .anunt ul li {
-    margin-bottom: 8px;  
+    margin-bottom: 8px;  /* distanță între linkuri */
 }
 
 .anunt ul li a {
     text-decoration: none;
-    color: #1a73e8;      
+    color: #1a73e8;      /* albastru link */
     font-weight: 500;
 }
 
@@ -573,29 +587,29 @@ h2.section-title {
 }
 
 .anunt .intro-text {
-    margin-bottom: 15px;   
-    font-style: normal;    
-    font-size: 1em;        
-    color: #333;           
+    margin-bottom: 15px;   /* space between intro text and the list */
+    font-style: normal;    /* or italic if you want */
+    font-size: 1em;        /* adjust for readability */
+    color: #333;           /* slightly darker text */
 }
 
 
-
+/* Bold the important lines */
 .anunt p strong {
-    font-weight: bold;        
-    font-size: 1em;           
-    margin: 10px 15px;          
+    font-weight: bold;        /* Bold text */
+    font-size: 1em;           /* Keep readable size */
+    margin: 10px 15px;           /* Spacing above and below */
 }
 
 
     
 
 
-
+/* Stilizare buton Înapoi la pagina principală */
 a.btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; 
+    background-color: #007bff; /* albastru */
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -605,10 +619,14 @@ a.btn {
 }
 
 a.btn:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); 
+    background-color: #0056b3; /* albastru mai închis la hover */
+    transform: translateY(-2px); /* efect mic de ridicare */
 }
 
 a.btn:active {
-    transform: translateY(0); 
+    transform: translateY(0); /* revine la poziția inițială când dai click */
+
 }
+
+
+
