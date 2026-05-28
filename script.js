@@ -197,3 +197,6 @@ window.addEventListener('resize', renderPagination);
 window.addEventListener('resize', renderPagination);
  
 
+
+ 
+
