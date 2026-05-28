@@ -591,11 +591,11 @@ h2.section-title {
     
 
 
-/* Stilizare buton Înapoi la pagina principală */
+
 a.btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; /* albastru */
+    background-color: #007bff; 
     color: white;
     text-decoration: none;
     border-radius: 6px;
