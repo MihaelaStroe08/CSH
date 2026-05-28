@@ -1,11 +1,11 @@
 document.querySelectorAll('.projects-parent > a, .submenu-parent > a, nav ul li > a[href="#"]').forEach(menu => {
   menu.addEventListener('click', e => {
-    e.preventDefault(); // prevenim scroll-ul la #
+    e.preventDefault(); 
     const parentLi = menu.parentElement;
     const submenu = parentLi.querySelector('ul, .submenu-right');
 
     if (submenu) {
-      submenu.classList.toggle('open'); // toggle vizibilitate
+      submenu.classList.toggle('open');
     }
   });
 });
@@ -83,11 +83,11 @@ let currentPage = 1;
 
 if (window.location.hash) {
   const hash = window.location.hash.replace('#', '');
-  const parts = hash.split('-anunt-'); // separăm pagina de anunț
+  const parts = hash.split('-anunt-'); 
 
   const hashPage = parseInt(parts[0]);
   if (!isNaN(hashPage) && hashPage >= 1 && hashPage <= totalPages) {
-    currentPage = hashPage; // setează pagina din hash
+    currentPage = hashPage; 
   }
 
  
@@ -104,7 +104,7 @@ const nextBtn = document.getElementById('next-btn');
 const pageNumbersContainer = document.querySelector('.page-numbers');
 
 function getMaxVisible() {
-  return window.innerWidth <= 600 ? 3 : 10; // mobil: 3 pagini, desktop: 10
+  return window.innerWidth <= 600 ? 3 : 10; 
 }
 
 function renderPagination() {
@@ -156,7 +156,7 @@ nextBtn.onclick = () => {
 
 function renderAnunturi() {
   const list = document.querySelector('.anunturi-list');
-  // ascunde tot ce este acolo
+  
   const anunturi = list.querySelectorAll('.anunt');
   anunturi.forEach(a => {
     if (parseInt(a.dataset.page) === currentPage) {
