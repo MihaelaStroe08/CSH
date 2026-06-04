@@ -456,6 +456,16 @@ nav ul li ul.open {
     text-align: center;  /* centrează tot conținutul din interior */
 }
 
+.scolarizare {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 20px 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
 /* Listele cu linkuri PDF */
 .file-list {
     list-style: none;  
