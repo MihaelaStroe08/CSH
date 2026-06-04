@@ -465,6 +465,21 @@ nav ul li ul.open {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+.file-list-ol {
+    list-style-position: inside; /* cifrele sunt în interior */
+    padding-left: 0;
+    margin: 0;
+}
+
+.file-list-ol li {
+    margin: 5px 0;
+}
+
+.file-list-ol li a {
+    text-decoration: underline;
+    color: #0066cc;  /* sau culoarea dorită */
+}
+
 .file-list-ul {
   list-style-type: none; /* fara buline */
   padding: 0;
