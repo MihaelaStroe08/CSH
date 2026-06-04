@@ -456,25 +456,28 @@ nav ul li ul.open {
     text-align: center;  /* centrează tot conținutul din interior */
 }
 
-.scolarizare {
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    padding: 20px 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
+.scolarizare-wrapper {
+  max-width: 900px;
+  margin: 0 auto 30px auto; /* centru + distanta jos */
+  padding: 20px 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Listele cu linkuri PDF */
-.file-list {
-    list-style: none;  
-    padding: 0;
-    margin: 0 auto 30px auto; /* spațiu jos între secțiuni */
+.file-list-ul {
+  list-style-type: none; /* fara buline */
+  padding: 0;
+  margin: 0;
 }
 
-.file-list li {
-    margin: 5px 0;  
+.file-list-ul li {
+  margin: 5px 0;
+}
+
+.file-list-ul li a {
+  text-decoration: underline;
+  color: #0066cc; /* sau orice culoare vrei */
 }
 
 /* Titluri secțiuni */
